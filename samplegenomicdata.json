@@ -1,0 +1,134 @@
+[{
+    "id": "316a4f1a-08bf-11eb-9b45-787b8ab17645",
+
+    "mutations": [
+
+        {
+
+            "status": 1,
+
+            "status_desc": "Green: lower reported importance than yellow",
+
+            "gene": "FOXP1",
+
+            "cdna_change": "c.1715T>C",
+
+            "prot_change": "p.Ile572Thr",
+
+            "allelefreq": 0.481,
+
+            "cosmic_id": "-",
+
+            "dbsnip_id": ".",
+
+            "transcript": "NM_001244810.1",
+
+            "genome": "Hg19",
+
+            "chrom": "3",
+
+            "start": "71019942",
+
+            "refvar": "T>C"
+
+        },
+
+        {
+
+            "status": 0,
+
+            "status_desc": "Yellow: higher reported importance than green",
+
+            "gene": "EZH2",
+
+            "cdna_change": "c.2084C>T",
+
+            "prot_change": "p.Ser695Leu",
+
+            "allelefreq": 0.454,
+
+            "cosmic_id": "COSM4384246",
+
+            "dbsnip_id": ".",
+
+            "transcript": "NM_004456.4",
+
+            "genome": "Hg19",
+
+            "chrom": "7",
+
+            "start": "148506428",
+
+            "refvar": "C>T"
+
+        }
+
+]},
+
+{
+
+    "id": "116a4f1a-08bf-11eb-9b45-787b8ab17641",
+
+    "mutations": [
+
+        {
+
+            "status": 1,
+
+            "status_desc": "Green: lower reported importance than yellow",
+
+            "gene": "FOXP1",
+
+            "cdna_change": "c.1715T>C",
+
+            "prot_change": "p.Ile572Thr",
+
+            "allelefreq": 0.481,
+
+            "cosmic_id": "-",
+
+            "dbsnip_id": ".",
+
+            "transcript": "NM_001244810.1",
+
+            "genome": "Hg19",
+
+            "chrom": "3",
+
+            "start": "71019942",
+
+            "refvar": "T>C"
+
+        },
+
+        {
+
+            "status": 0,
+
+            "status_desc": "Yellow: higher reported importance than green",
+
+            "gene": "EZH2",
+
+            "cdna_change": "c.2084C>T",
+
+            "prot_change": "p.Ser695Leu",
+
+            "allelefreq": 0.454,
+
+            "cosmic_id": "COSM4384246",
+
+            "dbsnip_id": ".",
+
+            "transcript": "NM_004456.4",
+
+            "genome": "Hg19",
+
+            "chrom": "7",
+
+            "start": "148506428",
+
+            "refvar": "C>T"
+
+        }
+
+]}]
