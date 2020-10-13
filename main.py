@@ -120,12 +120,13 @@ def variant_get():
     db = client['digital_genomic']
     gene_collection = db['test_genes']
 
+    gene_collection.update_many({}, { '$rename': {"mutations": "variant"}} )
 
     agr = [
-        {"$project": {'_id' : 0, 'id': 1, 'mutations': 1}},
-        {"$unwind": "$mutations"},
-        {"$project": {'id': 1, 'mutations.gene': 1, 'mutations.cdna_change': 1, 'mutations.prot_change': 1}},
-        {"$group": {'_id': {'gene': '$mutations.gene', 'cdna_change': '$mutations.cdna_change', 'prot_change': '$mutations.prot_change' }, 'mutations': {'$push': "$$ROOT"}}},
+        {"$project": {'_id' : 0, 'id': 1, 'variant': 1}},
+        {"$unwind": "$variant"},
+        {"$project": {'id': 1, 'variant.gene': 1, 'variant.cdna_change': 1, 'variant.prot_change': 1}},
+        #{"$group": {'_id':{'$id': {'gene': '$mutations.gene', 'cdna_change': '$mutations.cdna_change', 'prot_change': '$mutations.prot_change' }}}},
         #{"$group": {'_id': '$mutations.cdna_change'}},
 
                     #'mutations': {'$push': "$$ROOT"}}},
