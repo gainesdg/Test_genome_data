@@ -115,7 +115,34 @@ def percentage_get(field, field_value):
     return (num_field/tot_num) * 100
 
 
+def variant_get():
+    client = MongoClient('128.163.202.61', 27017, username='admin', password='cody01')
+    db = client['digital_genomic']
+    gene_collection = db['test_genes']
+
+
+    agr = [
+        {"$project": {'_id' : 0, 'id': 1, 'mutations': 1}},
+        {"$unwind": "$mutations"},
+        {"$project": {'id': 1, 'mutations.gene': 1, 'mutations.cdna_change': 1, 'mutations.prot_change': 1}},
+        {"$group": {'_id': {'gene': '$mutations.gene', 'cdna_change': '$mutations.cdna_change', 'prot_change': '$mutations.prot_change' }, 'mutations': {'$push': "$$ROOT"}}},
+        #{"$group": {'_id': '$mutations.cdna_change'}},
+
+                    #'mutations': {'$push': "$$ROOT"}}},
+        #{'$bucketAuto': {'groupBy': '$mutations.gene', 'buckets': 30,} },
+        #{"$match": {val_to_get: field_value}},
+    ]
+
+    agg_result = gene_collection.aggregate(agr)
+
+    for i in agg_result:
+        print(i)
+
+    client.close()
+
+
 #AVG_Freq()
 #get_requested_values("gene")
-the_percentage = percentage_get("gene", "TP53")
-print(the_percentage)
+#the_percentage = percentage_get("gene", "TP53")
+#print(the_percentage)
+variant_get()
